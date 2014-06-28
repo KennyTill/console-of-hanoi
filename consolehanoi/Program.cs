@@ -13,6 +13,7 @@ namespace consolehanoi
             GameBoard game = new GameBoard();
             game.printStatus();
             Console.ReadKey();
+            //checking i didnt ruin my repository
 
         }
     }
