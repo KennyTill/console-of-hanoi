@@ -40,7 +40,7 @@ namespace consolehanoi
             //dont want to put it back in itself
             if (takeFromTow != putInTow)
             {
-                if (towers[putInTow].peekTopSlot() < towers[takeFromTow].peekTopSlot())
+                if (towers[putInTow].peekTopSlot() > towers[takeFromTow].peekTopSlot())
                 {
                     Console.WriteLine("Illegal move, can not place a piece under a smaller piece");
                 }
@@ -50,11 +50,12 @@ namespace consolehanoi
                 }
 
             }
-            else
-            {
-                Console.WriteLine("Can't Place into itself!");
-            }
 
+        }
+
+        public bool winCondition()
+        {
+            return towers[1].checkWin() || towers[2].checkWin();
         }
 
 
