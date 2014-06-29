@@ -12,8 +12,13 @@ namespace consolehanoi
         {
             GameBoard game = new GameBoard();
             game.printStatus();
-            Console.ReadKey();
-            //checking i didnt ruin my repository
+            Console.Write("Take from which tower?");
+            string inputOne = Console.ReadKey().ToString();
+            
+            Console.WriteLine("");
+            Console.Write("Put into which tower?");
+            string inputTwo = Console.ReadKey().ToString();
+
 
         }
     }
