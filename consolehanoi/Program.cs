@@ -34,8 +34,7 @@ namespace consolehanoi
                         int intTwo = Convert.ToInt32(strTwo) - 1 ;
                         game.makeMove(intOne, intTwo);
 
-                        Console.WriteLine("");
-                        Console.WriteLine("");
+
                     }
                     else
                     {
@@ -46,7 +45,8 @@ namespace consolehanoi
                 {
                     Console.WriteLine("{0} is not a valid entry. Please pick 1, 2, 3", strOne);
                 }
-                
+                Console.WriteLine("");
+                Console.WriteLine("");
 
 
 

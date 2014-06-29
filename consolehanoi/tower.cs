@@ -8,8 +8,6 @@ namespace consolehanoi
 {
     class tower
     {
-        //slots for the disks, 4 is bottom, 1 is top etc
-        //might change this to an array
         public bool[] slots;    
 
 
