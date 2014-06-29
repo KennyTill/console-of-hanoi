@@ -8,16 +8,15 @@ namespace consolehanoi
 {
     class tower
     {
-        public bool[] slots;    
+        public disk[] slots = Enumerable.Range(0,4).Select(i => new disk()).ToArray();    
 
 
         //Can't win on the starting peg/tower
         private bool startTower = false;
 
-        public tower()
-        {
-            slots = new bool[4];
-        }
+		public tower()
+		{
+		}
 
         /// <summary>
         /// Peek at the top most item
@@ -27,7 +26,7 @@ namespace consolehanoi
             int topSlot = -1;
             for (int i = 3; i >= 0; i--)
             {
-                if (slots[i] == true)
+                if (slots[i].active == true)
                 {
                     topSlot = i;
                 }
@@ -42,7 +41,7 @@ namespace consolehanoi
         /// <param name="slotNum">Number of slot to alter</param>
         public void placeItem(int slotNum)
         {
-            slots[slotNum] = true;
+            slots[slotNum].active = true;
         }
         
         /// <summary>
@@ -51,7 +50,7 @@ namespace consolehanoi
         /// <param name="slotNum">Number of slot to alter</param>
         public void takeItem(int slotNum)
         {
-            slots[slotNum] = false;
+            slots[slotNum].active = false;
             
         }
 
@@ -62,7 +61,7 @@ namespace consolehanoi
         public bool isempty()
         {
             var stackList = from slot in slots
-                            where slot == true
+                            where slot.active == true
                             select slot;
             return stackList.Count() == 0;
         }
@@ -72,10 +71,10 @@ namespace consolehanoi
         /// </summary>
         public void fill()
         {
-            slots[0] = true;
-            slots[1] = true;
-            slots[2] = true;
-            slots[3] = true;
+            slots[0].active = true;
+            slots[1].active = true;
+            slots[2].active = true;
+            slots[3].active = true;
             startTower = true;
         }
 
@@ -83,7 +82,7 @@ namespace consolehanoi
         {
             if (!startTower)
             {
-                return slots[0] & slots[1] & slots[2] & slots[3];
+				return slots[0].active & slots[1].active & slots[2].active & slots[3].active;
             }
             return startTower;
         }

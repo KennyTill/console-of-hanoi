@@ -11,25 +11,45 @@ namespace consolehanoi
     /// </summary>
     class GameBoard
     {
-        tower[] towers = new tower[3];
-       
+		tower[] towers = Enumerable.Range(0, 3).Select(i => new tower()).ToArray();
         
         public GameBoard()
         {
             //set up the game
-            towers[0] = new tower();
-            towers[1] = new tower();
-            towers[2] = new tower();
             towers[0].fill();
-
         }
 
         public void printStatus()
         {
-            Console.WriteLine(towers[0].slots[0].ToString() + " | " + towers[1].slots[0].ToString() + " | " + towers[2].slots[0].ToString());
-            Console.WriteLine(towers[0].slots[1].ToString() + " | " + towers[1].slots[1].ToString() + " | " + towers[2].slots[1].ToString());
-            Console.WriteLine(towers[0].slots[2].ToString() + " | " + towers[1].slots[2].ToString() + " | " + towers[2].slots[2].ToString());
-            Console.WriteLine(towers[0].slots[3].ToString() + " | " + towers[1].slots[3].ToString() + " | " + towers[2].slots[3].ToString());
+			//Topmost
+            towers[0].slots[0].writeDisk(); 
+			Console.Write(" | ");
+			towers[1].slots[0].writeDisk();
+			Console.Write(" | ");
+			towers[2].slots[0].writeDisk();
+
+			Console.WriteLine("");
+			towers[0].slots[1].writeDisk();
+			Console.Write(" | ");
+			towers[1].slots[1].writeDisk();
+			Console.Write(" | ");
+			towers[2].slots[1].writeDisk();
+
+			Console.WriteLine("");
+			towers[0].slots[2].writeDisk();
+			Console.Write(" | ");
+			towers[1].slots[2].writeDisk();
+			Console.Write(" | ");
+			towers[2].slots[2].writeDisk();
+
+			Console.WriteLine("");
+			towers[0].slots[3].writeDisk();
+			Console.Write(" | ");
+			towers[1].slots[3].writeDisk();
+			Console.Write(" | ");
+			towers[2].slots[3].writeDisk();
+			Console.WriteLine("");
+            
         }
 
 
