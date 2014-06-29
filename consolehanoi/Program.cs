@@ -12,7 +12,6 @@ namespace consolehanoi
         {
             string[] inputs = {"1", "2", "3"};
             GameBoard game = new GameBoard();
-           
             while (!game.winCondition())
             {
                 game.printStatus();
@@ -47,10 +46,7 @@ namespace consolehanoi
                 }
                 Console.WriteLine("");
                 Console.WriteLine("");
-
-
-
-                
+    
             }
             Console.WriteLine("A WINRAR IS YOU");
             Console.ReadKey();

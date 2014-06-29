@@ -19,31 +19,6 @@ namespace consolehanoi
             slots = new bool[4];
         }
 
-        
-
-        /// <summary>
-        /// Get the top most item
-        /// </summary>
-        /// <returns> Slot of top item, 0 if empty</returns>
-        public int getFromTopSlot()
-        {
-            //int trueIndex = Array.IndexOf(slots, true, 0, 3);
-            //slots[trueIndex] = false;
-            //return trueIndex;
-            int topSlot = -1;
-            for (int i = 3; i >= 0; i--)
-            {
-                if (slots[i] == true)
-                {
-                    topSlot = 1;
-                }
-            }
-            slots[topSlot] = false;
-            return topSlot;
-
-        }
-
-
         /// <summary>
         /// Peek at the top most item
         /// </summary>
