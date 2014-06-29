@@ -36,21 +36,30 @@ namespace consolehanoi
         //set up move logic
         public void makeMove(int takeFromTow, int putInTow)
         {
-
-            //dont want to put it back in itself
             if (takeFromTow != putInTow)
             {
-                if (towers[putInTow].peekTopSlot() > towers[takeFromTow].peekTopSlot())
+                if (!towers[takeFromTow].isempty())
                 {
-                    Console.WriteLine("Illegal move, can not place a piece under a smaller piece");
+                    int putSlot = towers[putInTow].peekTopSlot();
+                    int takeSlot = towers[takeFromTow].peekTopSlot();
+
+                    if ((putSlot > takeSlot) || towers[putInTow].isempty())
+                    {
+                        towers[takeFromTow].takeItem(takeSlot);
+                        towers[putInTow].placeItem(takeSlot);
+                    }
+                    else
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Illegal move, can not place a piece under a smaller piece");
+                    }
                 }
                 else
                 {
-                    towers[putInTow].placeItem(towers[takeFromTow].getFromTopSlot());
+                    Console.WriteLine("");
+                    Console.WriteLine("Cannot take from empty tower");
                 }
-
             }
-
         }
 
         public bool winCondition()

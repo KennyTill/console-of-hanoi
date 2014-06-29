@@ -52,6 +52,8 @@ namespace consolehanoi
 
                 
             }
+            Console.WriteLine("A WINRAR IS YOU");
+            Console.ReadKey();
 
         }
     }

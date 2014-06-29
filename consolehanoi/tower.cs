@@ -27,18 +27,37 @@ namespace consolehanoi
         /// <returns> Slot of top item, 0 if empty</returns>
         public int getFromTopSlot()
         {
-            int trueIndex = Array.IndexOf(slots, true, 0, 3);
-            slots[trueIndex] = false;
-            return trueIndex;
+            //int trueIndex = Array.IndexOf(slots, true, 0, 3);
+            //slots[trueIndex] = false;
+            //return trueIndex;
+            int topSlot = -1;
+            for (int i = 3; i >= 0; i--)
+            {
+                if (slots[i] == true)
+                {
+                    topSlot = 1;
+                }
+            }
+            slots[topSlot] = false;
+            return topSlot;
+
         }
-        
-        
+
+
         /// <summary>
         /// Peek at the top most item
         /// </summary>
         public int peekTopSlot()
         {
-            return Array.IndexOf(slots, true, 0, 3);
+            int topSlot = -1;
+            for (int i = 3; i >= 0; i--)
+            {
+                if (slots[i] == true)
+                {
+                    topSlot = i;
+                }
+            }
+            return topSlot;
         }
 
 
@@ -62,12 +81,22 @@ namespace consolehanoi
         }
 
         /// <summary>
+        /// Check if tower contains any elements
+        /// </summary>
+        /// <returns>Boolean, is empty or not</returns>
+        public bool isempty()
+        {
+            var stackList = from slot in slots
+                            where slot == true
+                            select slot;
+            return stackList.Count() == 0;
+        }
+
+        /// <summary>
         /// Shortcut to fill tower a to start
         /// </summary>
         public void fill()
         {
-
-            //move this out to game board
             slots[0] = true;
             slots[1] = true;
             slots[2] = true;
