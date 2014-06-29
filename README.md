@@ -1,4 +1,6 @@
-hanoi-forms
+Console Of Hanoi
 ===========
 
-A winforms version of towers of hanoi.
+A console version of Towers of Hanoi, written in c#.
+
+use the 1, 2 and 3 keys to move the disks onto another peg.
