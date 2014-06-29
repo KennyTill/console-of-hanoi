@@ -22,6 +22,7 @@ namespace consolehanoi
         public void printStatus()
         {
 			//Topmost
+			Console.Write(" ");
             towers[0].slots[0].writeDisk(); 
 			Console.Write(" | ");
 			towers[1].slots[0].writeDisk();
@@ -29,13 +30,16 @@ namespace consolehanoi
 			towers[2].slots[0].writeDisk();
 
 			Console.WriteLine("");
+			Console.Write(" ");
 			towers[0].slots[1].writeDisk();
 			Console.Write(" | ");
 			towers[1].slots[1].writeDisk();
 			Console.Write(" | ");
 			towers[2].slots[1].writeDisk();
 
+
 			Console.WriteLine("");
+			Console.Write(" ");
 			towers[0].slots[2].writeDisk();
 			Console.Write(" | ");
 			towers[1].slots[2].writeDisk();
@@ -43,12 +47,15 @@ namespace consolehanoi
 			towers[2].slots[2].writeDisk();
 
 			Console.WriteLine("");
+			Console.Write(" ");
 			towers[0].slots[3].writeDisk();
 			Console.Write(" | ");
 			towers[1].slots[3].writeDisk();
 			Console.Write(" | ");
 			towers[2].slots[3].writeDisk();
 			Console.WriteLine("");
+
+			Console.WriteLine("   1   |   2   |   3");
             
         }
 
