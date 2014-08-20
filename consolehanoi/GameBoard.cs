@@ -21,40 +21,18 @@ namespace consolehanoi
 
         public void printStatus()
         {
-			//Topmost
-			Console.Write(" ");
-            towers[0].slots[0].writeDisk(); 
-			Console.Write(" | ");
-			towers[1].slots[0].writeDisk();
-			Console.Write(" | ");
-			towers[2].slots[0].writeDisk();
-
-			Console.WriteLine("");
-			Console.Write(" ");
-			towers[0].slots[1].writeDisk();
-			Console.Write(" | ");
-			towers[1].slots[1].writeDisk();
-			Console.Write(" | ");
-			towers[2].slots[1].writeDisk();
-
-
-			Console.WriteLine("");
-			Console.Write(" ");
-			towers[0].slots[2].writeDisk();
-			Console.Write(" | ");
-			towers[1].slots[2].writeDisk();
-			Console.Write(" | ");
-			towers[2].slots[2].writeDisk();
-
-			Console.WriteLine("");
-			Console.Write(" ");
-			towers[0].slots[3].writeDisk();
-			Console.Write(" | ");
-			towers[1].slots[3].writeDisk();
-			Console.Write(" | ");
-			towers[2].slots[3].writeDisk();
-			Console.WriteLine("");
-
+		
+			//lets make a loop to display from top to bottom
+			for (int i = 0; i <= 4; i++;
+			{
+				Console.Write(" ");
+				towers[0].slots[i].writeDisk(); 
+				Console.Write(" | ");
+				towers[1].slots[i].writeDisk();
+				Console.Write(" | ");
+				towers[2].slots[i].writeDisk();
+			}
+			
 			Console.WriteLine("   1   |   2   |   3");
             
         }
